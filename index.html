@@ -115,12 +115,11 @@ button:hover {
 </div>
 
 <div class="section">
-<h2>🎟 限時折扣碼</h2>
+<h2>🎟 限時折扣碼(點擊領取後在輸入優惠代碼處貼上即可)</h2>
 
 <div class="coupon-box">
 <div class="coupon-code" id="code1">SAVE888</div>
-<button onclick="copyCode('SAVE888')">複製折扣碼</button>
-<button onclick="goShop()">前往蝦皮使用</button>
+<button onclick="copyCode('SAVE888')">點擊領取</button>
 </div>
 
 </div>
@@ -129,12 +128,8 @@ button:hover {
 function copyCode(code){
     navigator.clipboard.writeText(code);
     alert("折扣碼已複製！");
+    window.open("https://s.shopee.tw/807OEa1Na1","_blank");
 }
-
-function goShop(){
-    window.open("你的蝦皮賣場連結","_blank");
-}
-</script>
 
 </body>
 </html>
