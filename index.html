@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-family: "Microsoft JhengHei", sans-serif;
     background: #0d0d0d;
-    color: #fff;
+    color: #ffffff;
 }
 
 header {
@@ -31,57 +31,45 @@ header {
     margin-bottom: 15px;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-    gap: 15px;
-}
-
-.product-card {
+.social-links a {
+    display: block;
     background: #1a1a1a;
-    border-radius: 10px;
-    padding: 10px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #ff4dc4;
+    font-weight: bold;
     text-align: center;
     transition: 0.3s;
 }
 
-.product-card:hover {
-    transform: scale(1.05);
-}
-
-.product-card img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.product-card a {
-    text-decoration: none;
-    color: #ff4dc4;
-    font-weight: bold;
-    display: block;
-    margin-top: 8px;
+.social-links a:hover {
+    background: #8a2be2;
+    color: #ffffff;
 }
 
 .coupon-box {
     background: #1a1a1a;
-    padding: 15px;
+    padding: 18px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    text-align: center;
 }
 
-.coupon-code {
+.coupon-title {
     font-size: 18px;
+    margin-bottom: 15px;
     color: #ff4dc4;
-    margin-bottom: 10px;
 }
 
 button {
     background: #8a2be2;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 16px;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 button:hover {
@@ -97,39 +85,31 @@ button:hover {
 </header>
 
 <div class="section">
-<h2>🔥 主打商品</h2>
+<h2>社群連結</h2>
 
-<div class="product-grid">
-
-<div class="product-card">
-<img src="商品圖片網址" alt="商品1">
-<a href="蝦皮商品連結" target="_blank">立即前往購買</a>
-</div>
-
-<div class="product-card">
-<img src="商品圖片網址" alt="商品2">
-<a href="蝦皮商品連結" target="_blank">立即前往購買</a>
-</div>
-
+<div class="social-links">
+<a href="你的Line連結" target="_blank">加入 Line 社群</a>
+<a href="你的IG連結" target="_blank">追蹤 Instagram</a>
+<a href="你的Threads連結" target="_blank">查看 Threads</a>
 </div>
 </div>
 
 <div class="section">
-<h2>🎟 限時折扣碼(點擊領取後在輸入優惠代碼處貼上即可)</h2>
+<h2>限時折扣碼</h2>
 
 <div class="coupon-box">
-<div class="coupon-code" id="code1">SAVE888</div>
-<button onclick="copyCode('SAVE888')">點擊領取</button>
+<div class="coupon-title">滿1000折50 即可</div>
+<button onclick="claimCoupon()">點擊領取</button>
 </div>
 
 </div>
 
 <script>
-function copyCode(code){
-    navigator.clipboard.writeText(code);
-    alert("折扣碼已複製！");
-    window.open("https://s.shopee.tw/807OEa1Na1","_blank");
+function claimCoupon(){
+    navigator.clipboard.writeText("SAVE888");
+    window.location.href = "https://s.shopee.tw/807OEa1Na1";
 }
+</script>
 
 </body>
 </html>
