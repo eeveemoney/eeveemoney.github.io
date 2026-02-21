@@ -1,11 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-    <meta charset="utf-8">
-    <title>eeveemoney</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊漾的蝦皮好康省錢站</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(135deg,#ff4dc4,#8a2be2);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.section {
+    padding: 20px;
+}
+
+.section h2 {
+    border-left: 5px solid #ff4dc4;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: #ff4dc4;
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+}
+
+.coupon-box {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.coupon-code {
+    font-size: 18px;
+    color: #ff4dc4;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #8a2be2;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff4dc4;
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome</h1>
-    <p>This is my GitHub Pages website.</p>
+
+<header>
+伊漾的蝦皮好康省錢站
+</header>
+
+<div class="section">
+<h2>🔥 主打商品</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="商品圖片網址" alt="商品1">
+<a href="蝦皮商品連結" target="_blank">立即前往購買</a>
+</div>
+
+<div class="product-card">
+<img src="商品圖片網址" alt="商品2">
+<a href="蝦皮商品連結" target="_blank">立即前往購買</a>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>🎟 限時折扣碼</h2>
+
+<div class="coupon-box">
+<div class="coupon-code" id="code1">SAVE888</div>
+<button onclick="copyCode('SAVE888')">複製折扣碼</button>
+<button onclick="goShop()">前往蝦皮使用</button>
+</div>
+
+</div>
+
+<script>
+function copyCode(code){
+    navigator.clipboard.writeText(code);
+    alert("折扣碼已複製！");
+}
+
+function goShop(){
+    window.open("你的蝦皮賣場連結","_blank");
+}
+</script>
+
 </body>
 </html>
