@@ -45,7 +45,7 @@ header {
 
 .coupon-title {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ff4dc4;
 }
 
@@ -96,13 +96,16 @@ button:hover {
 <h2>限時折扣碼</h2>
 
 <div class="coupon-box">
+
     <div class="coupon-title">滿100折20</div>
     <button onclick="claimCoupon()">點擊領取會自動複製折扣碼</button>
 
     <br><br>
 
-    <div class="coupon-title">限量專屬折扣碼</div>
+    <div class="coupon-title">專屬折扣碼</div>
     <button onclick="claimCoupon2()">點擊領取 eevee12345</button>
+
+</div>
 </div>
 
 <!-- 社群連結 -->
@@ -110,9 +113,15 @@ button:hover {
 <h2>社群連結</h2>
 
 <div class="social-icons">
-<a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24?utm_source=line-openchat-seo&utm_medium=search_keyword&utm_campaign=default" target="_blank"><i class="fa-brands fa-line"></i></a>
-<a href="https://www.instagram.com/_eevee_money?igsh=aTluZmRyY2xpZ2g0&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.threads.com/@_eevee_money?igshid=NTc4MTIwNjQ2YQ==" target="_blank"><i class="fa-brands fa-threads"></i></a>
+<a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24?utm_source=line-openchat-seo&utm_medium=search_keyword&utm_campaign=default" target="_blank">
+    <i class="fa-brands fa-line"></i>
+</a>
+<a href="https://www.instagram.com/_eevee_money?igsh=aTluZmRyY2xpZ2g0&utm_source=qr" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+</a>
+<a href="https://www.threads.com/@_eevee_money?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+    <i class="fa-brands fa-threads"></i>
+</a>
 </div>
 
 </div>
@@ -120,14 +129,7 @@ button:hover {
 <script>
 function claimCoupon(){
     navigator.clipboard.writeText("FEBSHV25");
-    window.location.href = "";
+    window.location.href = "https://s.shopee.tw/807OEa1Na1";
 }
 
-function claimCoupon2(){
-    navigator.clipboard.writeText("eevee12345");
-    window.location.href = https://s.shopee.tw/BOboUh1MX";
-}
-</script>
-
-</body>
-</html>
+function 
