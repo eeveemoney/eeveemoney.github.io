@@ -1,3 +1,9 @@
+沒問題，我了解了！要放在「同一排」的話，我們只需要在 CSS 加上 display: flex 讓它們橫向排列，並各佔一半的寬度即可。
+
+我也移除了所有的彈出視窗（alert），點擊後會直接複製並跳轉。
+
+修改後的完整代碼
+HTML
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -34,31 +40,38 @@ header {
     margin-bottom: 20px;
 }
 
-/* 折扣區 */
+/* 同一排的容器 */
+.coupon-row {
+    display: flex;
+    gap: 10px; /* 兩個按鈕之間的間距 */
+}
+
+/* 折扣區盒子 */
 .coupon-box {
+    flex: 1; /* 讓兩個盒子均分寬度 */
     background: #1a1a1a;
-    padding: 20px;
+    padding: 15px 10px;
     border-radius: 12px;
     text-align: center;
-    margin-bottom: 20px; /* 增加兩組按鈕之間的間距 */
 }
 
 .coupon-title {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
     color: #ff4dc4;
+    font-weight: bold;
 }
 
 button {
     background: #8a2be2;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 5px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px; /* 縮小一點字體以適應排版 */
     transition: 0.3s;
-    width: 100%; /* 讓按鈕在容器內滿版，方便點擊 */
+    width: 100%;
 }
 
 button:hover {
@@ -94,15 +107,17 @@ button:hover {
 
 <div class="section">
     <h2>限時折扣碼</h2>
+    
+    <div class="coupon-row">
+        <div class="coupon-box">
+            <div class="coupon-title">滿100折20</div>
+            <button onclick="claim1()">點擊複製領取</button>
+        </div>
 
-    <div class="coupon-box">
-        <div class="coupon-title">滿100折20</div>
-        <button onclick="claim1()">點擊領取會自動複製折扣碼</button>
-    </div>
-
-    <div class="coupon-box">
-        <div class="coupon-title">新用戶優惠碼</div>
-        <button onclick="claim2()">點擊領取會自動複製折扣碼</button>
+        <div class="coupon-box">
+            <div class="coupon-title">全站92折</div>
+            <button onclick="claim2()">點擊複製領取</button>
+        </div>
     </div>
 </div>
 
@@ -122,8 +137,8 @@ function claim1(){
 }
 
 function claim2(){
-    navigator.clipboard.writeText("這裡換成第二組折扣碼"); 
-    window.location.href = "這裡換成第二個蝦皮網址";
+    navigator.clipboard.writeText("這裡輸入第二組折扣碼"); 
+    window.location.href = "這裡輸入第二個連結";
 }
 </script>
 
