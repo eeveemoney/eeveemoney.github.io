@@ -25,7 +25,7 @@ header {
 
 /* 區塊 */
 .section {
-    padding: 20px 20px;
+    padding: 25px 20px;
 }
 
 .section h2 {
@@ -37,17 +37,17 @@ header {
 /* 同一排的容器 */
 .coupon-row {
     display: flex;
-    gap: 10px;
+    gap: 10px; /* 兩個按鈕之間的間距 */
 }
 
 /* 折扣區盒子 */
 .coupon-box {
-    flex: 1;
+    flex: 1; /* 讓兩個盒子均分寬度 */
     background: #1a1a1a;
     padding: 15px 10px;
     border-radius: 12px;
     text-align: center;
-    border: 1px solid #333;
+    margin-bottom: 10px;
 }
 
 .coupon-title {
@@ -61,10 +61,10 @@ button {
     background: #8a2be2;
     color: white;
     border: none;
-    padding: 10px 5px;
+    padding: 12px 5px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 14px; 
     transition: 0.3s;
     width: 100%;
 }
@@ -102,29 +102,26 @@ button:hover {
 
 <div class="section">
     <h2>限時折扣碼</h2>
+    
     <div class="coupon-row">
         <div class="coupon-box">
             <div class="coupon-title">滿100折20</div>
             <button onclick="claim1()">點擊複製領取</button>
         </div>
+
         <div class="coupon-box">
-            <div class="coupon-title">滿100折20</div>
+            <div class="coupon-title">第二組100折20</div>
             <button onclick="claim2()">點擊複製領取</button>
         </div>
     </div>
 </div>
 
 <div class="section">
-    <h2>4/4活動折扣碼</h2>
-    <div class="coupon-row">
-        <div class="coupon-box">
-            <div class="coupon-title">購物節限定$100-20</div>
-            <button onclick="claimEvent1()">點擊複製領取</button>
-        </div>
-        <div class="coupon-box">
-            <div class="coupon-title">蝦皮直營1000 - 200</div>
-            <button onclick="claimEvent2()">點擊</button>
-        </div>
+    <h2>商城折扣碼</h2>
+    
+    <div class="coupon-box">
+        <div class="coupon-title">全家 $299 - 30</div>
+        <button onclick="claimMall1()">點擊複製領取</button>
     </div>
 </div>
 
@@ -138,25 +135,20 @@ button:hover {
 </div>
 
 <script>
-// 第一區功能
 function claim1(){
-    navigator.clipboard.writeText("9LH7VH56N"); 
-    window.location.href = "https://s.shopee.tw/5VR6e2eLea";
+    navigator.clipboard.writeText("87ZTMYMXF"); 
+    window.location.href = "https://s.shopee.tw/3qInsySsmi";
 }
+
 function claim2(){
-    navigator.clipboard.writeText("9LH7VH56N"); 
-    window.location.href = "https://s.shopee.tw/5VR6e2eLea";
+    navigator.clipboard.writeText("CPLCE5XLZ"); 
+    window.location.href = "https://s.shopee.tw/3fzNgfTW7h";
 }
 
-// 4/4 活動區功能 (請在下方引號內填入正確的折扣碼與連結)
-function claimEvent1(){
-    navigator.clipboard.writeText("APRSH04"); 
-    window.location.href = "https://s.shopee.tw/2qQLTbYFSa";
-}
-
-function claimEvent2(){
-    navigator.clipboard.writeText("1111"); 
-    window.location.href = "https://s.shopee.tw/8ARrpHzF5B";
+// 商城折扣碼功能區
+function claimMall1(){
+    navigator.clipboard.writeText("fmapp260404"); 
+    window.location.href = "https://s.shopee.tw/3qIsg4sd2S";
 }
 </script>
 
