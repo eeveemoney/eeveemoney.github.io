@@ -25,7 +25,7 @@ header {
 
 /* 區塊 */
 .section {
-    padding: 25px 20px;
+    padding: 20px 20px;
 }
 
 .section h2 {
@@ -37,16 +37,17 @@ header {
 /* 同一排的容器 */
 .coupon-row {
     display: flex;
-    gap: 10px; /* 兩個按鈕之間的間距 */
+    gap: 10px;
 }
 
 /* 折扣區盒子 */
 .coupon-box {
-    flex: 1; /* 讓兩個盒子均分寬度 */
+    flex: 1;
     background: #1a1a1a;
     padding: 15px 10px;
     border-radius: 12px;
     text-align: center;
+    border: 1px solid #333;
 }
 
 .coupon-title {
@@ -63,7 +64,7 @@ button {
     padding: 10px 5px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 14px; /* 縮小一點字體以適應排版 */
+    font-size: 14px;
     transition: 0.3s;
     width: 100%;
 }
@@ -101,16 +102,28 @@ button:hover {
 
 <div class="section">
     <h2>限時折扣碼</h2>
-    
     <div class="coupon-row">
         <div class="coupon-box">
             <div class="coupon-title">滿100折20</div>
             <button onclick="claim1()">點擊複製領取</button>
         </div>
-
         <div class="coupon-box">
-            <div class="coupon-title">c第二組100折20</div>
+            <div class="coupon-title">全站92折</div>
             <button onclick="claim2()">點擊複製領取</button>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>4/4活動折扣碼</h2>
+    <div class="coupon-row">
+        <div class="coupon-box">
+            <div class="coupon-title">299 - 30</div>
+            <button onclick="claimEvent1()">點擊複製領取</button>
+        </div>
+        <div class="coupon-box">
+            <div class="coupon-title">1000 - 200</div>
+            <button onclick="claimEvent2()">點擊複製領取</button>
         </div>
     </div>
 </div>
@@ -125,14 +138,25 @@ button:hover {
 </div>
 
 <script>
+// 第一區功能
 function claim1(){
-    navigator.clipboard.writeText("87ZTMYMXF"); 
-    window.location.href = "https://s.shopee.tw/3qInsySsmi";
+    navigator.clipboard.writeText("9LH7VH56N"); 
+    window.location.href = "https://s.shopee.tw/7AZ4qmTtXH";
+}
+function claim2(){
+    navigator.clipboard.writeText("輸入折扣碼"); 
+    window.location.href = "輸入連結";
 }
 
-function claim2(){
-    navigator.clipboard.writeText("CPLCE5XLZ"); 
-    window.location.href = "https://s.shopee.tw/3fzNgfTW7h";
+// 4/4 活動區功能 (請在下方引號內填入正確的折扣碼與連結)
+function claimEvent1(){
+    navigator.clipboard.writeText("這裡填299-30的折扣碼"); 
+    window.location.href = "這裡填跳轉連結";
+}
+
+function claimEvent2(){
+    navigator.clipboard.writeText("這裡填1000-200的折扣碼"); 
+    window.location.href = "這裡填跳轉連結";
 }
 </script>
 
