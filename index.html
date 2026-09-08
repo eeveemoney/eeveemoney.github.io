@@ -37,12 +37,12 @@ header {
 /* 同一排的容器 */
 .coupon-row {
     display: flex;
-    gap: 10px; /* 兩個按鈕之間的間距 */
+    gap: 10px; /* 盒子之間的間距 */
 }
 
 /* 折扣區盒子 */
 .coupon-box {
-    flex: 1; /* 讓兩個盒子均分寬度 */
+    flex: 1; /* 讓多個盒子均分寬度 */
     background: #1a1a1a;
     padding: 15px 10px;
     border-radius: 12px;
@@ -51,7 +51,7 @@ header {
 }
 
 .coupon-title {
-    font-size: 16px;
+    font-size: 15px; /* 微調字體大小以適應三個方塊並排 */
     margin-bottom: 15px;
     color: #ff4dc4;
     font-weight: bold;
@@ -100,6 +100,7 @@ button:hover {
 伊漾的蝦皮好康省錢站
 </header>
 
+<!-- 第一區：已新增為三個方塊並排 -->
 <div class="section">
     <h2>社群限定折扣碼</h2>
     
@@ -112,6 +113,11 @@ button:hover {
         <div class="coupon-box">
             <div class="coupon-title">9/9全站$1000-999(第二組)</div>
             <button onclick="claim2()">點擊複製領取</button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">9/9全站$1000-999(第三組)</div>
+            <button onclick="claim3()">點擊複製領取</button>
         </div>
     </div>
 </div>
@@ -135,9 +141,16 @@ button:hover {
 <div class="section">
     <h2>購物節加碼折扣碼</h2>
     
-    <div class="coupon-box">
-        <div class="coupon-title">蝦皮VIP，iphone券</div>
-        <button onclick="claimMall1()">點擊複製領取</button>
+    <div class="coupon-row">
+        <div class="coupon-box">
+            <div class="coupon-title">蝦皮VIP，iphone券</div>
+            <button onclick="claimMall1()">點擊複製領取</button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">這裡輸入第二個標題</div>
+            <button onclick="claimMall2()">點擊複製領取</button>
+        </div>
     </div>
 </div>
 
@@ -162,7 +175,13 @@ function claim2(){
     window.location.href = "https://s.shopee.tw/8KpIS50ZyX";
 }
 
-// 第二區：4/4 活動功能 (請填入正確碼與連結)
+// 第一區新增的第三個方塊功能 (請修改引號內的折扣碼與連結)
+function claim3(){
+    navigator.clipboard.writeText("請輸入第三個折扣碼"); 
+    window.location.href = "https://s.shopee.tw/您的第三個連結";
+}
+
+// 第二區活動功能
 function claimEvent1(){
     navigator.clipboard.writeText("FMAPP260818"); 
     window.location.href = "https://s.shopee.tw/50YsVnmZwx";
@@ -173,15 +192,18 @@ function claimEvent2(){
     window.location.href = "https://s.shopee.tw/4fw28plLhR";
 }
 
-// 第三區：商城功能
+// 第三區商城功能 (第一個方塊)
 function claimMall1(){
     navigator.clipboard.writeText("FMAPP2604"); 
     window.location.href = "https://s.shopee.tw/gPtNXPlNK";
 }
-</script>
 
-</body>
-</html>
+// 第三區商城功能 (第二個方塊)
+function claimMall2(){
+    navigator.clipboard.writeText("請輸入第二個折扣碼"); 
+    window.location.href = "https://s.shopee.tw/您的第二個連結";
+}
+</script>
 
 </body>
 </html>
