@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -34,43 +35,81 @@ header {
     margin-bottom: 20px;
 }
 
-/* 同一排的容器 */
-.coupon-row {
-    display: flex;
-    gap: 10px; /* 盒子之間的間距 */
-}
-
-/* 折扣區盒子 */
-.coupon-box {
-    flex: 1; /* 讓多個盒子均分寬度 */
+/* 連結轉換器 */
+.converter-box {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 20px;
     background: #1a1a1a;
-    padding: 15px 10px;
+    border: 1px solid #39213d;
     border-radius: 12px;
-    text-align: center;
-    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-.coupon-title {
-    font-size: 15px; /* 微調字體大小以適應三個方塊並排 */
-    margin-bottom: 15px;
-    color: #ff4dc4;
-    font-weight: bold;
+.converter-description {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 15px;
 }
 
-button {
+.converter-box input,
+.converter-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #0d0d0d;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.converter-box input:focus,
+.converter-box textarea:focus {
+    outline: 1px solid #ff4dc4;
+    border-color: #ff4dc4;
+}
+
+.converter-box textarea {
+    min-height: 100px;
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+.converter-button {
     background: #8a2be2;
     color: white;
     border: none;
-    padding: 12px 5px;
+    padding: 12px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 14px; 
+    font-size: 14px;
     transition: 0.3s;
     width: 100%;
+    margin-bottom: 10px;
 }
 
-button:hover {
+.converter-button:hover {
     background: #ff4dc4;
+}
+
+.copy-button {
+    background: #333333;
+}
+
+.copy-button:hover {
+    background: #555555;
+}
+
+#converter-message {
+    color: #ff8cde;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    margin-bottom: 0;
 }
 
 /* 社群 ICON */
@@ -100,37 +139,158 @@ button:hover {
 伊漾的蝦皮好康省錢站
 </header>
 
-<!-- 第一區：已新增為三個方塊並排 -->
+<!-- 第一區：蝦皮連結轉換器 -->
 <div class="section">
-    <h2>社群限定折扣碼</h2>
-    
-    <div class="coupon-row">
-        <div class="coupon-box">
-            <div class="coupon-title">xxx</div>
-            <button onclick="claim1()">點擊複製領取</button>
-        </div>
+    <h2>蝦皮連結轉換器</h2>
 
-       
+    <div class="converter-box">
+        <p class="converter-description">
+            貼上蝦皮商品網址，就能產生你的專屬轉換連結。
+        </p>
+
+        <input
+            type="url"
+            id="product-url"
+            placeholder="請貼上蝦皮商品網址"
+            autocomplete="url"
+        >
+
+        <button
+            type="button"
+            class="converter-button"
+            id="convert-button"
+        >
+            <i class="fa-solid fa-link"></i> 點我轉換
+        </button>
+
+        <textarea
+            id="converted-url"
+            placeholder="轉換後的連結會顯示在這裡"
+            readonly
+        ></textarea>
+
+        <button
+            type="button"
+            class="converter-button copy-button"
+            id="copy-button"
+        >
+            <i class="fa-regular fa-copy"></i> 複製連結
+        </button>
+
+        <p id="converter-message" role="status" aria-live="polite"></p>
+    </div>
 </div>
 
-
-
+<!-- 第二區：社群連結 -->
 <div class="section">
     <h2>社群連結</h2>
     <div class="social-icons">
-        <a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24" target="_blank"><i class="fa-brands fa-line"></i></a>
-        <a href="https://www.instagram.com/_eevee_money" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.threads.com/@_eevee_money" target="_blank"><i class="fa-brands fa-threads"></i></a>
+        <a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+            <i class="fa-brands fa-line"></i>
+        </a>
+
+        <a href="https://www.instagram.com/_eevee_money" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.threads.com/@_eevee_money" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+            <i class="fa-brands fa-threads"></i>
+        </a>
     </div>
 </div>
 
 <script>
-// 第一區功能
-function claim1(){
-    navigator.clipboard.writeText("T56534V63"); 
-    window.location.href = "https://s.shopee.tw/1B34WNlpz";
-}
+(() => {
+    // 你的蝦皮聯盟行銷 ID
+    const affiliateId = "16312310000";
 
+    // 用來辨識這個網站的來源
+    const subId = "iyang-web";
+
+    const input = document.getElementById("product-url");
+    const output = document.getElementById("converted-url");
+    const message = document.getElementById("converter-message");
+
+    document.getElementById("convert-button").addEventListener("click", () => {
+        const rawUrl = input.value.trim();
+
+        if (!rawUrl) {
+            message.textContent = "請先貼上蝦皮商品網址喔！";
+            return;
+        }
+
+        try {
+            const productUrl = new URL(rawUrl);
+
+            // 僅接受 HTTPS 蝦皮網址
+            const allowedHosts = [
+                "shopee.tw",
+                "shopee.ph",
+                "shopee.sg",
+                "shopee.com.my",
+                "shopee.co.id",
+                "shopee.co.th",
+                "shopee.vn",
+                "shopee.com.br",
+                "shopee.com.mx"
+            ];
+
+            const isShopee =
+                productUrl.protocol === "https:" &&
+                allowedHosts.some(host =>
+                    productUrl.hostname === host ||
+                    productUrl.hostname.endsWith("." + host)
+                );
+
+            if (!isShopee) {
+                message.textContent = "請貼上完整的蝦皮商品網址。";
+                return;
+            }
+
+            // 移除原網址的追蹤參數，保留商品路徑
+            productUrl.search = "";
+            productUrl.hash = "";
+
+            const encodedUrl = encodeURIComponent(productUrl.href);
+
+            output.value =
+                "https://s.shopee.tw/an_redir?origin_link=" +
+                encodedUrl +
+                "&affiliate_id=" + encodeURIComponent(affiliateId) +
+                "&sub_id=" + encodeURIComponent(subId);
+
+            message.textContent =
+                "已產生連結！請先測試能否正常開啟及追蹤分潤。";
+
+        } catch (error) {
+            message.textContent = "網址格式不正確，請重新貼上蝦皮商品網址。";
+        }
+    });
+
+    document.getElementById("copy-button").addEventListener("click", async () => {
+        if (!output.value) {
+            message.textContent = "請先點擊「點我轉換」喔！";
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(output.value);
+            message.textContent = "複製成功！可以去分享連結囉。";
+        } catch (error) {
+            output.focus();
+            output.select();
+
+            try {
+                const copied = document.execCommand("copy");
+                message.textContent = copied
+                    ? "複製成功！可以去分享連結囉。"
+                    : "複製未成功，請手動選取連結複製。";
+            } catch (copyError) {
+                message.textContent = "請手動選取上方連結並複製。";
+            }
+        }
+    });
+})();
 </script>
 
 </body>
