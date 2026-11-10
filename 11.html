@@ -1,158 +1,3 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>伊漾的蝦皮好康省錢站</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-body {
-    margin: 0;
-    font-family: "Microsoft JhengHei", sans-serif;
-    background: #0d0d0d;
-    color: #ffffff;
-}
-
-header {
-    text-align: center;
-    padding: 25px 15px;
-    background: linear-gradient(135deg,#ff4dc4,#8a2be2);
-    font-size: 22px;
-    font-weight: bold;
-}
-
-/* 區塊 */
-.section {
-    padding: 25px 20px;
-}
-
-.section h2 {
-    border-left: 5px solid #ff4dc4;
-    padding-left: 10px;
-    margin-bottom: 20px;
-}
-
-/* 同一排的容器 */
-.coupon-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* 折扣區盒子 */
-.coupon-box {
-    flex: 1 1 calc(33.333% - 10px);
-    box-sizing: border-box;
-    min-width: 0;
-    background: #1a1a1a;
-    padding: 15px 10px;
-    border-radius: 12px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.coupon-title {
-    font-size: 15px;
-    margin-bottom: 15px;
-    color: #ff4dc4;
-    font-weight: bold;
-    min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    background: #8a2be2;
-    color: white;
-    border: none;
-    padding: 12px 5px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-    width: 100%;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #ff4dc4;
-}
-
-/* 社群 ICON */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 15px;
-}
-
-.social-icons a {
-    font-size: 32px;
-    color: #ff4dc4;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #8a2be2;
-    transform: scale(1.2);
-}
-
-/* 手機版 */
-@media (max-width: 600px) {
-    .section {
-        padding: 20px 15px;
-    }
-
-    .coupon-box {
-        flex: 1 1 calc(50% - 10px);
-    }
-
-    .coupon-title {
-        font-size: 14px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-伊漾的蝦皮好康省錢站
-</header>
-
-<!-- 11/11 蝦皮優惠 -->
-<div class="section">
-    <h2>11/11 蝦皮超商取貨優惠</h2>
-
-    <div class="coupon-row">
-
-        <div class="coupon-box">
-            <div class="coupon-title">蝦皮超商取貨 $299-30</div>
-            <button onclick="goToLink('https://s.shopee.tw/6q2AQxCtZa')">
-                點擊領取
-            </button>
-        </div>
-
-        <div class="coupon-box">
-            <div class="coupon-title">蝦皮 11/10-11/11 99%蝦幣回饋</div>
-            <button onclick="goToLink('https://s.shopee.tw/AKc2e4TRmf')">
-                點我領
-            </button>
-        </div>
-
-        <div class="coupon-box">
-            <div class="coupon-title">11/11 VIP新客送全站 $999-300</div>
-            <button onclick="goToLink('https://s.shopee.tw/8KqyGK3GyH')">
-                點連結免費領2個月
-            </button>
-        </div>
-
-    </div>
-</div>
-
 <!-- 11/11 全站折扣碼 -->
 <div class="section">
     <h2>11/11 全站折扣碼</h2>
@@ -166,8 +11,16 @@ button:hover {
             </button>
         </div>
 
+        <div class="coupon-box">
+            <div class="coupon-title">11/11 免運券10張</div>
+            <button onclick="goToLink('https://s.shopee.tw/8fTohajkWI')">
+                點我領
+            </button>
+        </div>
+
     </div>
 </div>
+
 
 <!-- 11/11 限時搶購 -->
 <div class="section">
@@ -210,61 +63,28 @@ button:hover {
             </button>
         </div>
 
+        <!-- 新增商品 -->
+
+        <div class="coupon-box">
+            <div class="coupon-title">1:00 【COACH】BROOKLYN包 $6400</div>
+            <button onclick="goToLink('https://s.shopee.tw/40hz961LrD')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">2:00 Xiaomi 無線吸塵器 $1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/3VliYEW9a9')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">19:00 倍潔雅 x 蝦皮聯名 56包$1</div>
+            <button onclick="goToLink('https://s.shopee.tw/7VHrJcBa4M')">
+                點我搶
+            </button>
+        </div>
+
     </div>
 </div>
-
-<!-- 社群連結：完整保留原本網址 -->
-<div class="section">
-    <h2>社群連結</h2>
-
-    <div class="social-icons">
-
-        <a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24"
-           target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-line"></i>
-        </a>
-
-        <a href="https://www.instagram.com/_eevee_money"
-           target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a href="https://www.threads.com/@_eevee_money"
-           target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-threads"></i>
-        </a>
-
-    </div>
-</div>
-
-<script>
-
-// 折扣碼：自動複製後開啟蝦皮連結
-async function claimCoupon(code, url) {
-
-    try {
-        await navigator.clipboard.writeText(code);
-
-    } catch (error) {
-
-        const textarea = document.createElement("textarea");
-        textarea.value = code;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-
-    }
-
-    window.location.href = url;
-}
-
-// 一般優惠及搶購商品：直接開啟蝦皮
-function goToLink(url) {
-    window.location.href = url;
-}
-
-</script>
-
-</body>
-</html>
