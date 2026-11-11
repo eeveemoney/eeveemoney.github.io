@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -23,7 +24,6 @@ header {
     font-weight: bold;
 }
 
-/* 區塊 */
 .section {
     padding: 25px 20px;
 }
@@ -34,15 +34,15 @@ header {
     margin-bottom: 20px;
 }
 
-/* 同一排的容器 */
 .coupon-row {
     display: flex;
-    gap: 10px; /* 盒子之間的間距 */
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-/* 折扣區盒子 */
 .coupon-box {
-    flex: 1; /* 讓多個盒子均分寬度 */
+    flex: 1;
+    min-width: 0;
     background: #1a1a1a;
     padding: 15px 10px;
     border-radius: 12px;
@@ -51,7 +51,7 @@ header {
 }
 
 .coupon-title {
-    font-size: 15px; /* 微調字體大小以適應三個方塊並排 */
+    font-size: 15px;
     margin-bottom: 15px;
     color: #ff4dc4;
     font-weight: bold;
@@ -64,7 +64,7 @@ button {
     padding: 12px 5px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 14px; 
+    font-size: 14px;
     transition: 0.3s;
     width: 100%;
 }
@@ -73,7 +73,6 @@ button:hover {
     background: #ff4dc4;
 }
 
-/* 社群 ICON */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -100,10 +99,10 @@ button:hover {
 伊漾的蝦皮好康省錢站
 </header>
 
-<!-- 第一區：已新增為三個方塊並排 -->
+<!-- 第一區：社群限定折扣碼 -->
 <div class="section">
     <h2>社群限定折扣碼</h2>
-    
+
     <div class="coupon-row">
         <div class="coupon-box">
             <div class="coupon-title">全站$100-20</div>
@@ -111,7 +110,7 @@ button:hover {
         </div>
 
         <div class="coupon-box">
-            <div class="coupon-title"X/div>
+            <div class="coupon-title">X</div>
             <button onclick="claim2()">點擊複製領取</button>
         </div>
 
@@ -119,12 +118,18 @@ button:hover {
             <div class="coupon-title">蝦皮全站1000-200</div>
             <button onclick="claim3()">點擊複製領取</button>
         </div>
+
+        <!-- 新增第四組 -->
+        <div class="coupon-box">
+            <div class="coupon-title">$100-20 第四組</div>
+            <button onclick="claim4()">點擊複製領取</button>
+        </div>
     </div>
 </div>
 
 <div class="section">
     <h2>10月活動折扣碼</h2>
-    
+
     <div class="coupon-row">
         <div class="coupon-box">
             <div class="coupon-title">iphone 5折券</div>
@@ -140,7 +145,7 @@ button:hover {
 
 <div class="section">
     <h2>購物節加碼折扣碼</h2>
-    
+
     <div class="coupon-row">
         <div class="coupon-box">
             <div class="coupon-title">蝦皮VIP，iphone券</div>
@@ -157,50 +162,60 @@ button:hover {
 <div class="section">
     <h2>社群連結</h2>
     <div class="social-icons">
-        <a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24" target="_blank"><i class="fa-brands fa-line"></i></a>
-        <a href="https://www.instagram.com/_eevee_money" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.threads.com/@_eevee_money" target="_blank"><i class="fa-brands fa-threads"></i></a>
+        <a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24" target="_blank">
+            <i class="fa-brands fa-line"></i>
+        </a>
+        <a href="https://www.instagram.com/_eevee_money" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.threads.com/@_eevee_money" target="_blank">
+            <i class="fa-brands fa-threads"></i>
+        </a>
     </div>
 </div>
 
 <script>
 // 第一區功能
 function claim1(){
-    navigator.clipboard.writeText("NOVSHO11"); 
+    navigator.clipboard.writeText("NOVSHO11");
     window.location.href = "https://s.shopee.tw/8fTodwraIz";
 }
 
 function claim2(){
-    navigator.clipboard.writeText("P5PN4CJST"); 
+    navigator.clipboard.writeText("P5PN4CJST");
     window.location.href = "https://s.shopee.tw/9V2WLIN5gD";
 }
 
-// 第一區新增的第三個方塊功能 (請修改引號內的折扣碼與連結)
 function claim3(){
-    navigator.clipboard.writeText("9XH5EM9D7"); 
+    navigator.clipboard.writeText("9XH5EM9D7");
     window.location.href = "https://s.shopee.tw/1W022EguDo";
+}
+
+// 新增第四組折扣碼
+function claim4(){
+    navigator.clipboard.writeText("savee111");
+    window.location.href = "https://s.shopee.tw/906gi5cZd7";
 }
 
 // 第二區活動功能
 function claimEvent1(){
-    navigator.clipboard.writeText("SVSP2611"); 
+    navigator.clipboard.writeText("SVSP2611");
     window.location.href = "https://s.shopee.tw/9AQ5F1vXaj";
 }
 
 function claimEvent2(){
-    navigator.clipboard.writeText("618KOL"); 
+    navigator.clipboard.writeText("618KOL");
     window.location.href = "https://s.shopee.tw/6q0xpxNhxX";
 }
 
-// 第三區商城功能 (第一個方塊)
+// 第三區商城功能
 function claimMall1(){
-    navigator.clipboard.writeText("FMAPP2604"); 
+    navigator.clipboard.writeText("FMAPP2604");
     window.location.href = "https://s.shopee.tw/gPtNXPlNK";
 }
 
-// 第三區商城功能 (第二個方塊)
 function claimMall2(){
-    navigator.clipboard.writeText("SHPAF99"); 
+    navigator.clipboard.writeText("SHPAF99");
     window.location.href = "https://s.shopee.tw/7pt5DJpsUt";
 }
 </script>
