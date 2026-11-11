@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊漾的蝦皮好康省錢站</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", sans-serif;
+    background: #0d0d0d;
+    color: #ffffff;
+}
+
+header {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(135deg,#ff4dc4,#8a2be2);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 區塊 */
+.section {
+    padding: 25px 20px;
+}
+
+.section h2 {
+    border-left: 5px solid #ff4dc4;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* 同一排的容器 */
+.coupon-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 折扣區盒子 */
+.coupon-box {
+    flex: 1 1 calc(33.333% - 10px);
+    box-sizing: border-box;
+    min-width: 0;
+    background: #1a1a1a;
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.coupon-title {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #ff4dc4;
+    font-weight: bold;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background: #8a2be2;
+    color: white;
+    border: none;
+    padding: 12px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ff4dc4;
+}
+
+/* 社群 ICON */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    font-size: 32px;
+    color: #ff4dc4;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #8a2be2;
+    transform: scale(1.2);
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+    .section {
+        padding: 20px 15px;
+    }
+
+    .coupon-box {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .coupon-title {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+伊漾的蝦皮好康省錢站
+</header>
+
+<!-- 最上方：版主加碼折扣碼 -->
+<div class="section">
+    <h2>版主加碼折扣碼</h2>
+
+    <div class="coupon-row">
+
+        <div class="coupon-box">
+            <div class="coupon-title">$100-20 第一組</div>
+            <button onclick="claimCoupon('EFWEAZH9D','https://s.shopee.tw/3B8tmvm44m')">
+                點我複製領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">$100-20 第二組</div>
+            <button onclick="claimCoupon('AEYM5XQGH','https://s.shopee.tw/30pTacmhPl')">
+                點我複製領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">$100-20 第三組</div>
+            <button onclick="claimCoupon('L29LC7PRY','https://s.shopee.tw/2qW3OJnKkk')">
+                點我複製領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">$100-20 第四組</div>
+            <button onclick="claimCoupon('BHZ3SPJZM','https://s.shopee.tw/2gCdC0ny5j')">
+                點我複製領取
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 第一區：11/11 蝦皮優惠 -->
+<div class="section">
+    <h2>11/11 蝦皮超商取貨優惠</h2>
+
+    <div class="coupon-row">
+
+        <div class="coupon-box">
+            <div class="coupon-title">蝦皮超商取貨 $299-30</div>
+            <button onclick="goToLink('https://s.shopee.tw/6q2AQxCtZa')">
+                點擊領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">蝦皮 11/10-11/11 100%蝦幣回饋</div>
+            <button onclick="goToLink('https://s.shopee.tw/AKc2e4TRmf')">
+                點我領
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">11/11 VIP新客送全站 $999-300</div>
+            <button onclick="goToLink('https://s.shopee.tw/8KqyGK3GyH')">
+                點連結免費領2個月
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 第二區：11/11 全站折扣碼 -->
+<div class="section">
+    <h2>11/11 全站折扣碼</h2>
+
+    <div class="coupon-row">
+
+        <div class="coupon-box">
+            <div class="coupon-title">蝦皮全站 $100-20</div>
+            <button onclick="claimCoupon('NOVSHO11','https://s.shopee.tw/3LSIGXrJWp')">
+                點擊複製領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">11/11 免運券10張</div>
+            <button onclick="goToLink('https://s.shopee.tw/8fTohajkWI')">
+                點我領
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">EDM 全站無門檻 $0-111</div>
+            <button onclick="claimCoupon('EDMYGL11','https://s.shopee.tw/8pnF3H3k70')">
+                點我領取
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 第三區：11/11 領券懶人包 -->
+<div class="section">
+    <h2>11/11領券 懶人包</h2>
+
+    <div class="coupon-row">
+
+        <div class="coupon-box">
+            <div class="coupon-title">信用卡繳費送200蝦</div>
+            <button onclick="goToLink('https://s.shopee.tw/8AXYLN0qRY')">
+                點我領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">iPhone 18 5折券</div>
+            <button onclick="goToLink('https://s.shopee.tw/1BNo0WEiNr')">
+                點我領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">美妝全站 1折 $1111-1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/AAIcix5HLb')">
+                點我領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">蝦皮保健品 $300-300</div>
+            <button onclick="goToLink('https://s.shopee.tw/906fKoLgLZ')">
+                點我領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">寵物用品93折券</div>
+            <button onclick="goToLink('https://s.shopee.tw/1BqcNfm1Y')">
+                點我領取
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">美食專用 11%回饋</div>
+            <button onclick="goToLink('https://s.shopee.tw/1W0eP2F2pR')">
+                點我領取
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 第四區：每日搶商品區 -->
+<div class="section">
+    <h2>每日搶商品區</h2>
+
+    <div class="coupon-row">
+
+        <div class="coupon-box">
+            <div class="coupon-title">New Balance 全館鞋子 $1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/6L5twgcajZ')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">adidas 全館鞋子 $1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/W86zwd8Rg')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">寶拉珍選 $11</div>
+            <button onclick="goToLink('https://s.shopee.tw/9zzByLb8b5')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">每天0、12點 媚比琳！泰迪絨霧液態唇泥 $11</div>
+            <button onclick="goToLink('https://s.shopee.tw/70LVLaI7yO')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">每天12/16點 理膚寶水淡斑洗臉乳 $11</div>
+            <button onclick="goToLink('https://s.shopee.tw/qkvCQX0B1')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">每天12/16點 適樂膚 B5修護精華 $11</div>
+            <button onclick="goToLink('https://s.shopee.tw/8VAMKX6uxp')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">每天12點 未來美正貨 $99</div>
+            <button onclick="goToLink('https://s.shopee.tw/3Vli6NxqTH')">
+                點我搶
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 第五區：11/11 限時搶購 -->
+<div class="section">
+    <h2>11/11 限時搶購區</h2>
+
+    <div class="coupon-row">
+
+        <div class="coupon-box">
+            <div class="coupon-title">20點 富士空白底片（20張）$11</div>
+            <button onclick="goToLink('https://s.shopee.tw/9AQ48yfR8q')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">21點 羅技 PRO X 無線電競耳麥 $1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/7KyPxc0Ecy')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">22點 手持式蒸氣掛燙機 $111</div>
+            <button onclick="goToLink('https://s.shopee.tw/5AtvNdOIJH')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">23點 AirPods 4 主動式降噪款 $1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/114MPyrYuA')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">0點 Apple iPad 11 $7450</div>
+            <button onclick="goToLink('https://s.shopee.tw/80E6kta58W')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">1:00 【COACH】BROOKLYN包 $6400</div>
+            <button onclick="goToLink('https://s.shopee.tw/40hz961LrD')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">2:00 Xiaomi 無線吸塵器 $1111</div>
+            <button onclick="goToLink('https://s.shopee.tw/3VliYEW9a9')">
+                點我搶
+            </button>
+        </div>
+
+        <div class="coupon-box">
+            <div class="coupon-title">19:00 倍潔雅x蝦皮聯名 56包$1</div>
+            <button onclick="goToLink('https://s.shopee.tw/7VHrJcBa4M')">
+                點我搶
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- 第六區：社群連結 -->
+<div class="section">
+    <h2>社群連結</h2>
+
+    <div class="social-icons">
+
+        <a href="https://openchat.line.me/tw/cover/4LBrOJtYyB72wC514AuXeoxuemBgeUZbHnfvDGvICRSvc_wpOpm3CXZau24"
+           target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-line"></i>
+        </a>
+
+        <a href="https://www.instagram.com/_eevee_money"
+           target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.threads.com/@_eevee_money"
+           target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-threads"></i>
+        </a>
+
+    </div>
+</div>
+
+<script>
+
+// 折扣碼：自動複製後開啟蝦皮連結
+async function claimCoupon(code, url) {
+
+    try {
+        await navigator.clipboard.writeText(code);
+
+    } catch (error) {
+
+        const textarea = document.createElement("textarea");
+        textarea.value = code;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+    }
+
+    window.location.href = url;
+}
+
+// 一般優惠及搶購商品：直接開啟蝦皮
+function goToLink(url) {
+    window.location.href = url;
+}
+
+</script>
+
+</body>
+</html>
